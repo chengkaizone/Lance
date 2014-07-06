@@ -1,0 +1,149 @@
+Xcode 导出app---前提需要一部已经越狱的ios设备(在Xcode中如果没有真机,
+Xcode菜单栏-->Product-->Archive这一行是灰色的;无法导出xcarchive归档文件;这个文件里显示包内容;
+有个Products文件夹;app文件就在里面)
+首先Xcode导出app归档文件需要开发者账号:开发者账号每年需要向交99美元申请
+对于许多草根开发者是一大阻碍:
+在此使用免证书导出方法:
+(教程地址)http://kqwd.blog.163.com/blog/static/4122344820117191351263/
+首先:
+1.创建证书
+创建证书的过程比较简单，打开实用工具-钥匙串访问。然后在菜单栏里点击钥匙串访问-证书助理-创建证书来打开向导。
+第一个步骤比较重要，必须要把名称命名为iPhone Developer，将类型设定为代码签名，
+将"让我覆盖这些默认值"选中。之后的步骤无需更改，一路点击“确定”和“继续”来完成这个向导就可以。
+这一步之后证书创建成功;在后面使用真机调试的时候需要用到
+2.接下来修改Xcode配置文件:
+教程上使用命令终端来修改:
+我测试后感觉无法保存:
+所以可以通过启用超级用户进入指定文件夹修改(关于启用超级用户请自行百度)
+本教程主要将4.3以后的Xcode版本
+（Xcode4.1请执行）cd /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/
+（Xcode4.2请执行）cd /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/
+（Xcode4.3请执行）cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk
+（Xcode4.3.2请执行）cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk
+（Xcode4.5请执行）cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk
+（Xcode4.6请执行）cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk
+以上都是使用命令行进入到指定目录;
+根据各自版本:
+在使用root用户登陆后打开Finder
+直接定位到指定路径 cmd+shift+G 跳出弹框 复制或输入上面的绝对路径  点击前往
+可以看到SDKSettings.plist文件;
+双击默认会使用Xcode打开(用其他工具也可以打开,在修改该文件之前最好先备份;以免出现修改错误)
+
+将以下两段中的YES改为NO
+<key>CODE_SIGNING_REQUIRED</key>
+<string>YES</string>
+和
+<key>ENTITLEMENTS_REQUIRED</key>
+<string>YES</string>
+
+
+3.下面修改另外一个文件
+进入目录并备份原文件
+（Xcode4.1/4.2请执行）cd /Developer/Platforms/iPhoneOS.platform/
+（Xcode4.3/4.4/4.5/4.6请执行）cd /Applications/Xcode.app/Contents/Developer/Platforms
+这里会看见Info.plist文件
+双击打开
+将全部的XCiPhoneOSCodeSignContext 修改成 XCCodeSignContext，之后的版本一般有三处
+Xcode 4.5、4.6也有三处，分别在DefaultProperties分支下、RuntimeRequirements分支下和OverrideProperties分支下。
+
+修改方式同上(第2步)
+修改完成后配置基本已经完成(教程上说需要添加脚本---本人未添加测试成功(脚本多麻烦呀))
+
+接下来在Xcode上使用真机调试;
+首先点击工程--->targets--->Build Settings--->All--->Code Signing(组标题)
+--->Debug和Release分别选中Don't Code Sign
+--->Any iOS SDK分别选中iPhone Developer(这个应该是在第一步覆盖默认值创建的签名证书,
+选择Don't Code Sign貌似也可以---选Don't Code Sign通常容易成功)
+
+有的说需要在工程中新创建Entitlements.plist文件
+具体方法是：打开 File Menu, 选择 New File -> iPhone OS -> Code Signing -> 
+Entitlements. Name the file “Entitlements.plist" ，然后点击 ‘Finish’. 
+打开后添加属性Can be debugged--->值YES
+点击工程--->targets--->Build Settings--->All--->Code Signing(组标题)
+将Code Signing Entitlements 那项的值改为刚刚新建得“Entitlements.plist".
+事实上在4.6后的版本该选项已经没有设置了;Xcode之前的版本未使用过不知道
+Xcode选择自己的设备---如果已经开启调试模式---Xcode菜单栏-->Product-->Archive这一行就是可点击的;
+如果是灰色的先开启调试模式--->
+Xcode右上角Organizer--->Devices(标签栏第一项);
+会显示已经插入的设备--->灰色表示未插入或者Mac或Xcode版本过低;
+黄色表示未开启真机调试模式--->右边--->Use Development开启调试模式(设备需要越狱)
+绿色表示已经开启调试模式(设备已经越狱)
+选择iPhone--->Console可以看到程序的调试信息
+此时Xcode选择自己的设备可以直接将程序安装到手机上(出现问题仔细查看上面的步骤是否完成);
+
+
+接下来导出制作ipa;
+A.以release方式Build整个项目(可选:默认debug Build)
+Xcode菜单栏-->Product--->Schemes--->Manager Schemes--->弹出框
+勾选Autocreate schemes 勾选 工程项目名(这两处默认已经勾选)--->
+点击左下角Edit--->弹出框--->Run 工程项目名.app--->右边Info---> Build Configuration--->Release
+(4.6之前版本可以参考)--->工程下的Products分组--->工程名.app--->右键Show in Finder(4.6之后这项不可点击--->必须经过以下步骤)
+B.Xcode菜单栏-->Product-->Archive--->这一步编译程序--->如果程序没有错误--->弹出Organizer Archives窗口
+显示刚编译好的程序--->有两个选项:
+1.Validate(验证)(不选)
+2.Distribute(分配)点击它;
+接下来有三个选项:
+1.Submit to the iOS App Store
+2.Save for Enterprise or Ad-Hoc Deployment
+3.Export as Xcode Archive(导出Xcode归档文件) 
+选择第3项--->Next
+填写文件名及保存目录--->
+进入该目录找到刚才保存的xcarchive后缀名文件--->右键显示包内容--->Product--->找到工程名.app;
+将这个文件拖入iTunes--->打开资料库--->左边下拉选项应用程序(本人最初没找到)就能看见刚才的软件--->
+右键--->在Finder中显示就是ipa文件
+
+
+在此大功告成!!!
+
+提示在ios设备中安装iTunes资料库应用程序中已下载好的ipa程序需要安装AppSync(
+在ios设备与iTunes之间进行同步,本人已安装,不过好像没效果,不过可以通过iFile等文件管理器复制到ios文件系统,双击进行安装),
+ios设备需要越狱才能安装该软件(推荐越狱工具Cydia,关于越狱自行百度);
+
+值得注意的是
+ios同android一样应用程序通过包名(android的叫法,ios叫Bundle Identifier)来判断是否是同一个应用程序;
+如果同一个应用程序以不同的包名导出安装到手机上将会出现两个应用;如果是同一包名会进行覆盖安装;
+但是签名必须一致;否则会安装失败(同android一样);
+ios修改Bundle Identifier:
+点击工程--->targets--->Summany--->Bundle Identifier--->修改为自家公司或者个人(自定义)
+最后的标识符是工程名Summany中不可修改;需要在右侧栏修改(可以大写:与android不同)
+
+接下来是签名证书的管理:
+同android一样如果软件不使用相同的签名来导出软件;在更新时无法覆盖安装(安装会失败)
+系统中找到钥匙串访问
+
+在钥匙串访问中--->菜单栏--->钥匙串访问--->证书助理--->创建证书--->如果是ios开发请务必命名为iPhone Developer
+身份签名:(默认)自签名根证书
+证书类型:S/MIME(电子邮件)
+谨记:务必勾选--->让我覆盖这些默认值;
+后面的选项可以一路默认继续进行创建(可以免签名导出ipa);但是作为证书管理需要保存该证书(对软件更新必须);
+接下来证书有效期默认为一年最长在20年大一点(超出最大年数将不显示:也许无效);
+Email地址可以不和Apple ID一致
+其他根据自己实际填写;不填写也可以
+接下来--->密钥使用扩展:勾选三项(系统默认已经勾选)
+1.包括密钥使用扩展
+2.此扩展是至关重要的
+3.签名
+继续--->已扩展的密钥使用扩展:默认已经勾选电子邮件保护
+继续--->基本约束扩展(默认未勾选)
+继续--->主题备用名称扩展(默认已经勾选包括主题备用名称扩展rfc822Name:自己选填的电子邮件)
+继续--->指定用于该证书的位置:
+钥匙串:登录
+最后一步--->创建:完成
+创建证书成功
+接下来导出证书:
+在钥匙串访问中--->菜单栏--->钥匙串访问--->登录--->我的证书:
+右边--->iPhone Developer(如果有两个根据时间可以判断需要的那一个)--->右键导出证书--->
+文件格式:(个人信息交换).p12
+填写文件名,选择保存位置
+点击存储;输入使用证书的密码--->继续;然后需要输入登录钥匙串的密码
+(默认为当前用户的登录密码:如果自己设置了钥匙串登录密码另外填写)
+
+如果你的手机系统比较高;需要将工程的调高才能进行调试
+
+
+
+
+
+
+
+

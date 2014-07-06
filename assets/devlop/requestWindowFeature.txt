@@ -1,0 +1,65 @@
+首先介绍一个重要方法那就是requestWindowFeature(featrueId),它的功能是启用窗体的扩展特性。参数是Window类中定义的常量。
+
+一、枚举常量
+
+1.DEFAULT_FEATURES：系统默认状态，一般不需要指定
+
+2.FEATURE_CONTEXT_MENU：启用ContextMenu，默认该项已启用，一般无需指定
+
+3.FEATURE_CUSTOM_TITLE：自定义标题。当需要自定义标题时必须指定。如：标题是一个按钮时
+
+4.FEATURE_INDETERMINATE_PROGRESS：不确定的进度
+
+5.FEATURE_LEFT_ICON：标题栏左侧的图标
+
+6.FEATURE_NO_TITLE：没标题
+
+7.FEATURE_OPTIONS_PANEL：启用“选项面板”功能，默认已启用。
+
+8.FEATURE_PROGRESS：进度指示器功能
+
+9.FEATURE_RIGHT_ICON:标题栏右侧的图标
+
+
+
+
+对于默认启用的和前面有介绍的就略去不提了。我们说比较常用的FEATURE_INDETERMINATE_PROGRESS和FEATURE_NO_TITLE。
+
+
+
+
+
+FEATURE_INDETERMINATE_PROGRESS：表示一个进程正在运行
+
+progress.xml
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ProgressBar android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"     
+            android:layout_gravity="center_vertical"
+            style="?android:attr/progressBarStyleSmallTitle">
+    </ProgressBar>
+</LinearLayout>
+
+
+Java代码
+
+
+
+public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        setContentView(R.layout.main);
+
+        getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, R.layout.progress);
+        setProgressBarIndeterminateVisibility(true); //适当时候set false来隐藏
+
+        //...
+}

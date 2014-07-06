@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:background="@drawable/drag_selector"
+	>
+	<TextView 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+	    android:textAppearance="@style/globle_list_title"
+		android:id="@+id/list_item_title" 
+		android:paddingLeft="7dip"
+		android:paddingTop="10dip" 
+		android:paddingRight="14dip"
+		android:paddingBottom="10dip" 
+		android:text="新闻"
+		android:gravity="center"
+		android:textColor="@android:color/black"
+		android:layout_centerVertical="true"
+		android:layout_alignWithParentIfMissing = "true"
+		android:layout_alignParentLeft="true" />
+	<ImageView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/list_item_image"
+		android:paddingLeft="7dip" 
+		android:paddingRight="7dip" 
+		android:contentDescription="拖动控件"
+		android:src="@drawable/custom_selector"
+		android:layout_alignParentRight="true" 
+		android:layout_centerVertical="true" />
+</RelativeLayout>

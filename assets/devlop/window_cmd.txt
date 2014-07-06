@@ -1,0 +1,15 @@
+清理命令行
+cls
+
+创建window服务
+以下有两个转义符号
+binpath= 命令+参数(使用引号)注意等号前没有空格 等号后有空格
+
+服务的最终值
+"C:\Apache\csvn\bin\svnserve.exe" --service -r "C:\Apache\csvn\data\repositories\think" --listen-port "3690"
+sc命令创建window服务
+"C:\Apache\csvn\bin\svnserve.exe" --service -r "C:\Apache\csvn\data\repositories\think" --listen-port "3690"
+完整命令
+sc create svn binpath= "C:\Apache\csvn\bin\svnserve.exe --service -r c:\Apache\csvn\data\repositories\think --listen-port 3690" displayname= "CollabNet Subversion service" depend= Tcpip start= auto
+删除window服务
+sc delete 服务名

@@ -1,0 +1,33 @@
+一些配置需要sys以sysdba身份登录:
+sqlplus sys/密码@db as sysdba
+
+删除EM配置:
+emca -deconfig dbcontrol db -repos drop ;
+创建EM配置:
+emca -config dbcontrol db -repos create;(需要解锁用户);
+创建用户:
+create user user_name identified by password
+修改用户口令:
+alter user use_name identitfied by password
+解锁用户:
+alter user scott account unlock
+锁定用户:
+alter user scott account lock
+
+导出数据:
+exp system/manager@orcl file=c:\orcl.dmp full=y
+导入数据:
+imp system/manager@orcl file=c:\orcl.dmp full=y
+
+CREATE USER MARTIN
+IDENTIFIED BY martinpwd
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP;
+例如：
+--创建新用户
+CREATE USER jack
+IDENTIFIED BY "123"
+DEFAULT TABLESPACE "USERS"
+TEMPORARY TABLESPACE "TEMP"
+
+PLSQL创建普通用户授予角色dba(权限极大)/connect(可以登录)

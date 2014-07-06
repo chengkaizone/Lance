@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffecedee"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/base_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ck_red_top" >
+
+        <TextView
+            android:id="@+id/base_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="主菜单"
+            android:textColor="@color/ck_white"
+            android:textSize="@dimen/ck_text_big" />
+
+        <Button
+            android:id="@+id/drag_title_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/topcomment_column"
+            android:paddingBottom="6dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:text="普通模式"
+            android:textColor="#ffffffff" />
+    </RelativeLayout>
+
+    <org.lance.widget.SortableListView
+        android:id="@+id/drag_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:listSelector="@drawable/listview_selector" />
+
+</LinearLayout>

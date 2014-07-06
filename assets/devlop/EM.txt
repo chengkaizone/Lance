@@ -1,0 +1,89 @@
+手动重建em资料库
+下面是emca创建em的过程，大致演示一下：
+1， 删除建立失败的em档案库：
+
+ C:\emca -deconfig dbcontrol db -repos drop 
+
+EMCA 开始于 2011-4-23 11:19:18
+
+EM Configuration Assistant, 11.1.0.5.0 正式版
+
+版权所有 (c) 2003, 2005, Oracle。保留所有权利。 
+
+输入以下信息:
+
+数据库 SID: verafzy
+
+监听程序端口号: 1521
+
+SYS 用户的口令:
+
+SYSMAN 用户的口令:
+
+SYSMAN 用户的口令:
+
+是否继续? [是(Y)/否(N)]: y
+
+2009-7-23 11:19:40 oracle.sysman.emcp.EMConfig perform
+
+信息: 正在将此操作记录到 E:\app\Administrator\cfgtoollogs\emca\verafzy\emca_2011-4-23 _11_19_17.log。
+
+2011-4-23  11:19:42 oracle.sysman.emcp.util.DBControlUtil stopOMS
+
+信息: 正在停止 Database Control (此操作可能需要一段时间)...
+
+2011-4-23  11:20:23 oracle.sysman.emcp.EMReposConfig invoke
+
+信息: 正在删除 EM 资料档案库 (此操作可能需要一段时间)...
+
+2011-4-23  11:24:42 oracle.sysman.emcp.EMReposConfig invoke
+
+信息: 已成功删除资料档案库
+
+已成功完成 Enterprise Manager 的配置
+
+EMCA 结束于 2011-4-23  11:24:56
+
+2， 重新创建em档案库：
+
+   C:\emca -config dbcontrol db -repos create 
+
+EMCA 开始于 2011-4-23 11:26:55
+
+EM Configuration Assistant, 11.1.0.5.0 正式版
+
+版权所有 (c) 2003, 2005, Oracle。保留所有权利。 
+
+输入以下信息:
+
+数据库 SID: verafzy
+
+监听程序端口号: 1521
+
+SYS 用户的口令:
+
+DBSNMP 用户的口令:
+
+SYSMAN 用户的口令:
+
+SYSMAN 用户的口令: 通知的电子邮件地址 (可选):
+
+通知的发件 (SMTP) 服务器 (可选):
+
+----------------------------------------------------------------- 
+
+已指定以下设置 
+
+数据库 ORACLE_HOME ................ E:\app\Administrator\product\11.1.0\db_1 
+
+本地主机名 ................ PC-200901030636
+
+监听程序端口号 ................ 1521
+
+数据库 SID ................ verafzy
+
+通知的电子邮件地址 ...............
+
+通知的发件 (SMTP) 服务器 ...............
+
+是否继续? [是(Y)/否(N)]: y

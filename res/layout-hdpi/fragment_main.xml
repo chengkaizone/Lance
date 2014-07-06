@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@color/ck_gray_white"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+  android:layout_width="match_parent"
+  android:layout_height="40dip"
+  android:gravity="center"
+  android:id="@+id/base_top_title"
+  android:text="android碎片机制"
+  android:background="@drawable/og_top_background"
+  android:textSize="@dimen/ck_text_big"
+  android:textColor="@color/ck_white"/>
+	<LinearLayout 
+	   android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" 
+	    >
+	<fragment 
+	    class="org.lance.fragment.ListTitleFragment"
+	    android:id="@+id/frag_list"
+	    android:layout_weight="1"
+	    android:layout_width="0dp"
+	    android:layout_height="fill_parent"/>
+	<fragment 
+	    class="org.lance.fragment.ContentFragment"
+	    android:id="@+id/frag_content"
+	    android:layout_weight="3"
+	    android:layout_width="0dp"
+	    android:layout_height="fill_parent"/>
+	</LinearLayout>
+</LinearLayout>

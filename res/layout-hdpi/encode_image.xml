@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ck_base_bg"
+    android:id="@+id/encode_root"
+    android:visibility="gone"
+    android:orientation="vertical" >
+    <include
+	android:layout_width="fill_parent"
+	android:layout_height="40dip"
+	android:id="@+id/login_include"
+	layout="@layout/base_title"/>
+    <TextView 
+	    android:padding="6dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="46dp"
+	    android:textColor="@color/ck_black"
+	    android:textSize="18sp"
+	    android:id="@+id/encode_info"
+	    />
+	<ImageView 
+	    android:id="@+id/encode_image"
+	    android:layout_width="160dp"
+	    android:layout_height="160dp"
+	    android:layout_gravity="center"
+	    android:scaleType="fitCenter"
+	    android:layout_centerInParent="true"
+	    android:src="@drawable/app_icon"/>
+	
+	<Button android:textAppearance="@style/list_title_style"
+	android:id="@+id/encode_share_button" android:background="@drawable/ck_base_button"
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:paddingLeft="15dp" android:paddingRight="15dp"
+	android:layout_below="@id/encode_image"
+	android:layout_centerHorizontal="true"
+	android:text="分享"
+	android:layout_marginTop="15dp"
+	/>
+	<Button android:textAppearance="@style/list_title_style"
+	android:id="@+id/encode_read_button" android:background="@drawable/ck_base_button"
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:paddingLeft="15dp" android:paddingRight="15dp"
+	android:layout_below="@id/encode_share_button"
+	android:layout_centerHorizontal="true"
+	android:text="读取图片信息"
+	android:layout_marginTop="15dp"
+	/>
+</RelativeLayout>

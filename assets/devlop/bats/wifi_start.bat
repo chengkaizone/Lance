@@ -1,0 +1,3 @@
+netsh wlan start hostednetwork
+@pause
+echo 按任意键关闭窗口...

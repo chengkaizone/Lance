@@ -1,0 +1,68 @@
+特别要注意使用客户端创建的资源库只能本地访问---不能使用http方式访问,写入的文件也不一样
+Edge的认证文件是~/data/conf/svn_auth_file===>只能使用web方式添加用户;删除可以手动删除
+资源库迁移比较麻烦
+SVN客户端的认证文件是资源库绝对路径/conf/authz(用户/组访问权限规则)
+SVN客户端的认证文件是资源库绝对路径/conf/passwd(用户密码管理文件)
+SVN客户端的认证文件是资源库绝对路径/conf/svnserve.conf(是否开启密码认证)
+
+Subversion 服务端(SVN)
+http://www.collab.net/downloads/subversion/
+创建资源库:
+svnadmin create c:\svn_repository
+设置访问用户(用户认证)
+c:\svn_repository\conf\passwd目录下打开用户注释:[users]下几行去掉"#"
+用户授权
+c:\svn_repository\conf\authz可以设置用户组
+设置方法
+[groups]---以下为组别
+root = admin,ganchengkai
+manager = think
+user = test
+目录访问权限(可以设置组,也可以设置用户)
+[/]
+* = rw
+[groups]
+root = admin,ganchengkai
+manager = think
+user = test
+[/]
+* = r
+[wallinter:/]---wallinter资源库名
+* =
+admin = rw
+@root = rw
+@user = rw
+[wallinter:/tags]
+@root = rw
+@user = r
+c:\svn_repository\conf\svnserve.conf
+配置认证和授权文件
+去掉password-db=passwd 的"#"
+启动Subversion服务(资源库路径)(命令行启动)
+svnserve -d -r c:\svn_repository
+//常常创建的三个文件夹
+//主开发目录---trunk
+//分支目录---branches
+//版本锁定目录---tags
+
+//访问资源方式---如果使用了http方式可以使用http://IP:3343/svn/版本库名---默认端口(3343)可以忽略端口
+使用SVN客户端
+file:///资源库绝对路径
+svn://localhost/trunk...
+下载SVN客户端
+http://tortoisesvn.net/downloads.html
+
+创建window服务 创建基于svn协议的svn本地服务
+以下有两个转义符号
+binpath= 命令+参数(使用引号)注意等号前没有空格 等号后有空格
+sc命令创建window服务
+"C:\Apache\csvn\bin\svnserve.exe" --service -r "C:\Apache\csvn\data\repositories\think" --listen-port "3690"
+完整命令
+sc create svn binpath= "C:\Apache\csvn\bin\svnserve.exe --service -r c:\Apache\csvn\data\repositories\think --listen-port 3690" displayname= "CollabNet Subversion service" depend= Tcpip start= auto
+删除window服务
+sc delete 服务名
+
+window sc创建系统服务
+svnservice服务的值
+"C:\Apache\csvn\bin\svnserve.exe" --service -r "C:\Apache\csvn\data\repositories\think" --listen-port "3690"
+"C:\Software\CollabNet\Subversion Server\svnserve.exe" --service -r "c:\svn_repository" --listen-port "3690"

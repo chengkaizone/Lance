@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="comment_toolbar_style">
+        <item name="android:textSize">13sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/ck_white</item>
+    </style>
+    <style 
+		name="GroupableListView" 
+		parent="@android:style/Widget.ExpandableListView">
+		<item name="android:groupIndicator">@drawable/expandable_group</item>
+	</style>
+	<style name="menu_animation" parent="@android:style/Animation">
+		<item name="android:windowEnterAnimation">@anim/menu_down_in</item>
+		<item name="android:windowExitAnimation">@anim/menu_down_out</item>
+	</style>
+	<!-- Flipboard添加风格 -->
+	<style name="textShadowBlackDark">
+        <item name="android:shadowColor">#99000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">0.01</item>
+    </style>
+    <style name="textShadowBlack">
+        <item name="android:shadowColor">#66000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">0.01</item>
+    </style>
+    <style name="FLPaperButtonDark" 
+        parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textColor">#fff7f7f7</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/paperbutton_dark</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">-2.0</item>
+        <item name="android:shadowRadius">0.01</item>
+    </style>
+    <style name="FLInput">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/input_field</item>
+        <item name="android:paddingTop">5.0dip</item>
+        <item name="android:paddingBottom">6.0dip</item>
+		<item name="android:inputType">textNoSuggestions</item>
+    </style>
+    <style name="FLPaperButtonDarkDone" 
+        parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textColor">#fff7f7f7</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/paperbutton_dark_done</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:shadowColor">#33000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">-2.0</item>
+        <item name="android:shadowRadius">0.01</item>
+    </style>
+</resources>

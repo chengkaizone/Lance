@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:background="@color/ck_gray_white">  
+    <include layout="@layout/base_title"/>"
+<ListView android:id="@+id/myListView"
+    android:paddingTop="40dp"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"
+    android:cacheColorHint="#00000000"  
+/>  
+ <LinearLayout
+	android:id="@+id/section_lay"
+	android:visibility="gone"
+	android:gravity="center"
+	android:layout_width="fill_parent"  
+    android:layout_height="fill_parent">
+<TextView
+	android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="21dp"
+    android:background="@drawable/section_popup_bg"
+    android:id="@+id/section_text"/>
+   </LinearLayout>
+<org.lance.widget.SectionBar  
+    android:id = "@+id/sideBar"  
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"  
+    android:layout_width="25dp"
+    android:layout_marginRight="6dp"  
+    android:layout_alignParentRight="true"  
+/>  
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:background="#ffecedee"  
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <include
+  android:layout_width="match_parent"
+  android:layout_height="40dip"
+  android:id="@+id/web_head"
+  layout="@layout/base_title"/>
+  <RelativeLayout
+      android:id="@+id/web_relay"
+      android:layout_below="@id/web_head"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp">
+		<EditText android:id="@+id/web_input" 
+		    android:background="@drawable/ck_base_button"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:layout_marginRight="60dp" 
+			android:saveEnabled="true"
+			android:hint="请输入网址" 
+			android:layout_alignParentTop="true"
+			android:inputType="textUri" />
+		<Button 
+		    android:textColor="#ff000000"
+			android:id="@+id/web_search"
+			android:layout_width="60dp"
+			android:background="@drawable/ck_base_button"
+			android:layout_height="wrap_content" 
+			android:text="链接" 
+			android:gravity="center"
+			android:layout_alignParentRight="true"
+			/>
+	</RelativeLayout>
+  <ProgressBar
+  android:layout_width="fill_parent"
+  android:layout_height="10dip"
+  android:visibility="gone"
+  android:max="100"
+  android:layout_below="@id/web_relay"
+  style="@android:style/Widget.ProgressBar.Horizontal"
+  android:id="@+id/web_tab_bar"/>
+  <WebView
+      android:paddingTop="80dp"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/webview"/>
+</LinearLayout>

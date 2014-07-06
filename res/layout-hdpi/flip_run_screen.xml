@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/first_run_cinemagraph"
+    android:padding="12dp" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/f_logo" />
+
+    <TextView
+        android:id="@+id/first_launch_cover_subtitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="12dp"
+        android:text="从这里，您可以看到一切"
+        android:textColor="#ffffffff"
+        android:textSize="18dp" 
+        android:shadowColor="#66000000"
+        android:shadowDx="0.0"
+        android:shadowDy="2.0"
+        android:shadowRadius="0.01"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/first_launch_cover_subtitle"
+        android:layout_alignParentLeft="true"
+        android:text="Flipboard
+欢迎您"
+        android:textColor="#ffffffff"
+        android:textSize="42dp"
+        android:shadowColor="#66000000"
+        android:shadowDx="0.0"
+        android:shadowDy="2.0"
+        android:shadowRadius="0.01" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+打开DDMS查看内存占用情况
+Window > Open Perspective > Other... > DDMS
+
+左边栏选择设备---指定包名程序---update heap
+右边栏选中Heap选项卡---Cause GC
+OK!
+Heap Size为设备为程序分配的堆内存;
+若该值大于/system/build.prop文件中
+dalvik.vm.heapsize指定的值;则会报内存溢出(程序崩溃)
+如果有指定dalvik.vm.heapgrowthlimit值;
+则程序运行的最大内存以这个值为主

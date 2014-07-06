@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="ck_white">#ffffffff</color>
+	<color name="ck_black">#ff000000</color>
+	<color name="ck_light_black">#cc000000</color>
+	<color name="ck_red">#ffff0000</color>
+	<color name="ck_blue">#ff0000ff</color>
+	<color name="ck_green">#ff00ff00</color>
+	<color name="ck_transparent">#00000000</color>
+	<color name="ck_gray">#ff808080</color>
+	<color name="ck_gray_white">#ffecedee</color>
+	<color name="ck_main_title_color">#fff1f2f4</color>
+    <color name="ck_main_bg_color">#ffecedee</color>
+    <color name="ck_menu_layout_color">#ffc9cccd</color>
+    
+    <color name="night_ck_black">#ffecedee</color>
+	<color name="night_ck_gray_white">#ff696969</color>
+	
+	<!-- 菜单相关 -->
+	<color name="menu_text_color">#ff000000</color>
+	<color name="menu_layout_bg_color">#ffc9cccd</color>
+    <color name="night_menu_layout_bg_color">#ff4f4f4f</color>
+	<!-- 日历控件颜色  -->
+	<color name="Calendar_WeekBgColor">#EFE7DE</color>
+    <color name="Calendar_WeekFontColor">#8C8A8C</color>
+    <color name="Calendar_DayBgColor">#F7F7F7</color>
+    <color name="isHoliday_BgColor">#E0E0E0</color>
+    <color name="unPresentMonth_FontColor">#8C8A8C</color>
+    <color name="isPresentMonth_FontColor">#000000</color>
+    <color name="isToday_BgColor">#EBDCC1</color>
+    <color name="specialReminder">#FF0000</color>
+    <color name="commonReminder">#BDBAB5</color>
+    
+    <color name="transparent">#00000000</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="time_bg">#bfbfbf</color>
+</resources>

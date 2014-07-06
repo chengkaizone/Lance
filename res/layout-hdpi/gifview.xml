@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/ck_gray_white">
+  <include
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  layout="@layout/base_title"/>
+  <Button
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:id="@+id/gifview_btn1"
+  android:layout_gravity="center_horizontal"
+  android:background="@drawable/ck_base_button"
+  android:text="change"/>
+  <org.lance.widget.GifView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_margin="4px"
+  android:id="@+id/gifview_gif"/>
+</LinearLayout>

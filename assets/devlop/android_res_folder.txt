@@ -1,0 +1,61 @@
+屏幕尺寸Screen size :
+　　显示屏幕的实际大小，按照屏幕的对角线进行测量。small, normal, large, and xlarge 
+长宽比Aspect ratio :
+　　长宽比是屏幕的物理宽度与物理高度的比例关系。
+分辨率Resolution :
+　　在屏幕上显示的物理像素总和。
+密度Density :
+　　根据像素分辨率，在屏幕指定物理宽高范围内能显示的像素数量。 ldpi (low) 120, mdpi (medium) 160, hdpi (high) 240, and xhdpi (extra high) 320
+　　DENSITY_DEFAULT = DENSITY_MEDIUM = 160; 
+设备独立像素Density-independent pixel (dp/dip) :
+　　应用程序可以用来定义UI组件的虚拟像素单元，通过密度无关的方式来描述布局尺寸和位置。pixels = dps * (density / 160).
+每英寸像素数DPI(dot per inch) : 
+pt: point，是一个标准的长度单位，1pt＝1/72英寸，用于印刷业，非常简单易用； 
+sp: scaled pixels(放大像素). 主要用于字体显示best for textsize。 
+res目录下：
+drawable
+drawable-ldpi
+drawable-mdpi
+drawable-hdpi
+drawable-xhdpi
+drawable-nodpi
+drawable-nodpi-1024×600
+drawable-nodpi-1280×800
+drawable-nodpi-800×480
+values
+values-ldpi
+values-mdpi
+values-hdpi
+values-xhdpi
+values-nodpi
+values-nodpi-1024×600
+values-nodpi-1280×800
+values-nodpi-800×480
+******************************
+在工程的default.properties中如果split.density=false，则分辨率适配的时候文件夹命名不需要与scale相除
+例
+屏幕分辨率：800x480
+density：1.5（240）
+文件夹：values-hdpi-800x480 
+******************************
+ 
+屏幕分辨率：1024x600
+density：1（160）
+文件夹：values-mdpi-1024x600
+
+屏幕分辨率：1024x600
+density：1.5（240）
+文件夹：values-hdpi-683x400  由1024/1.5  600/1.5得到，需要四舍五入。
+
+屏幕分辨率：800x480
+density：1（160）
+文件夹：values-mdpi-800x480
+
+屏幕分辨率：800x480
+density：1.5（240）
+文件夹：values-hdpi-533x320  由800/1.5  480/1.5得到，需要四舍五入。
+
+以此类推
+一般情况下需要创建出values 、values-mdpi 、 values-hdpi文件夹，以备在一些没有规定的尺寸屏幕上找不到资源的情况。
+然后在里面使用不同的dimens文件，Layout中不要使用显示的数字，所有的尺寸定义全都援引dimens里面的内容。
+这样能够保证深度UI定制的情况

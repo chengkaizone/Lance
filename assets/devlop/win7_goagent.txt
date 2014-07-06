@@ -1,0 +1,78 @@
+win7 goagent翻墙教程
+
+Python 
+http://www.python.org/getit/
+goagent
+http://code.google.com/p/goagent/
+
+GoAgentX for mac (这是另一个工具)下载地址:
+https://github.com/ohdarling/GoAgentX/downloads 
+Step 1 申请创建一个Application
+登录http://appengine.google.com，如果你已经拥有一个Gmail账户，直接输入账号密码就可以登录；如果没有则需要新申请一个Gmail账户。（笔者认为Gmail是必用的邮箱之一，木有的童鞋赶快申请一个）
+Step 2 创建Application
+Step 3 -通过短信验证你的账户；输入自己的手机号码 中国代码+86 手机号 点击send
+需要短信验证才可以进行下一步操作，Country and Carrier（国家和运营商）处选择Other，Mobile Number（手机号码）处填写你的个人手机号码号码，格式为+8613912345678
+Step 4 -将手机收到的验证码输入并Send；
+你将会收到谷歌发给你的短信，短信内容大致为：Google App Engine：******（六位数字）。
+Step 5 -创建一个属于你的Application；
+1）输入一个Application ID，允许使用英文字母和短横杆；
+2）点击Check Available，检查一下是否可用；
+3）输入Application名称，这里可以随便填(最好使用英文)；
+4）勾选I accept these terms，即接受协议；
+5）最后Creat Application;
+
+接着提示Application Registered Successfully表示创建成功
+
+修改谷歌账号两步验证
+Step 1 -进入谷歌账户设置页面https://www.google.com/settings，在安全性-两步认证处，点击修改；
+Step 2 -开始设置Google账户；
+Step 3 -手机设置，此处你需要点击发送验证码，获取验证码后提交确认进入下一步；
+Step 4 -验证计算机，如果当前计算机不是你个人的计算机，不要勾选信任此计算机；
+Step 5 -设置两步验证的最后一步，激活;
+Step 6 -开始为你的Application创建密码;
+Step 7 -输入名称，这里可以随便填写，点击生成密码进入下一步；
+Step 8 -把生成的密码记下来，后面会用到的。
+
+配置goagent客户端
+Step 1 -下载goagent客户端（Download）；http://code.google.com/p/goagent/
+Step 2 -修改local/proxy.ini中的[gae]下的appid=你的appid(多appid请用|隔开)，即前面创建创建Application所设定的Application ID，如我设定的my-xberry；
+注意appid"="后面要留空格 appid换成你创建的Application ID
+
+Step 3 -双击 server/uploader.bat（Windows 7或Windows 8用户最好以管理员身份运行），根据提示依次输入Application ID，邮箱地址，和修改谷歌账号两步验证Step 8中生成的16位密码。（注，输入密码时，文字是不可见的，确定输入后回车确认即可。
+
+开始使用GoAgent
+使用GoAgent上网前，你必须运行local\goagent.exe（以管理员身份运行），就刚才下载的goagent压缩包里面的文件。
+如果你使用的是Chrome，请参考以下教程：
+1）chrome请安装SwitchySharp插件； 2）导入SwitchySharp配置，下载地址http://goagent.googlecode.com/files/SwitchyOptions.bak，进入SwitchySharp设置界面，点击“导入/导出”-“从文件恢复”，导入刚才下载的SwitchyOptions.bak
+3）使用Chrome浏览Twitter、Facebook，YouTube等网站时，记得切换到GoAgent
+
+如果你使用的是Firefox，请参考以下教程：
+1）安装火狐附加组件AutoProxy；(https://addons.mozilla.org/zh-cn/firefox/addon/autoproxy/)安装完毕后重启Firefox，提示规则列表，记得选中确定；
+3）添加代理设置，点击AutoProxy图标旁边的三角按钮，在下拉菜单中选择“preferences”或者使用快捷键Ctrl+Alt+P进入附加组件首选项设置，然后点击Proxy Server，选择Edit Proxy Server，添加代理地址，如下图
+添加代理:goagent 127.0.0.1 8087 http  OK!
+
+4）修改默认代理，同样是“preferences”界面点击Proxy Server，选择Choose Proxy Server，将默认的Proxy改成刚才添加的；
+5）使用AutoProxy会自动根据已定规则决定是否使用Proxy的。碉堡了。
+
+都设置好了twitter看看，有木有？再上facebook看看看，有木有？再 上YouTube看看看看，有木有？碉堡了，速度果然威武，哥上YouTube看720P视频居然完全不需要缓冲
+
+遇到问题？请登录http://code.google.com/p/goagent/或者留言。点击查看更多好东西(http://www.x-berry.com/category/vpn)
+如果你使用的是linux或者mac，请阅读https://code.google.com/p/goagent/的FAQ。
+Warning：切记需要连接外网时运行文件夹local下的goagent.exe，否则无法连接外网。
+2012-10-23 Update：这两天很多人反映无法使用GoAgent，出现情况者请打开旧版本的local下的proxy.ini，将profile = google_cn 改成profile = google_hk ，或者更新为最新版本GoAgent，下载goagent-v2.0.14。(http://www.kuaipan.cn/file/id_60192132702404676.htm)
+
+如果你无法使用GoAgent或觉得设置过于复杂，建议可以您考虑使用VPN，以下是笔者测试过的一些VPN：
+国内VPN服务商：
+1.二师兄VPN(http://www.x-berry.com/ershixiong-vpn)；
+2.51VPN(http://www.x-berry.com/51vpn)；
+3.Green(http://www.x-berry.com/green-vpn)；
+4.VPN Tech Runo(http://www.x-berry.com/vpn-tech-runo)
+国外VPN服务商：
+1.PureVPN(http://www.x-berry.com/purevpn)；
+2.iVPN(http://www.x-berry.com/ivpn)；
+3.SwitchVPN(http://www.x-berry.com/switchvpn)；
+4.SunVPN(http://www.x-berry.com/sunvpn);
+参考资料：
+http://code.google.com/p/goagent/
+http://zh.wikipedia.org/wiki/Google_App_Engine
+http://maolihui.com

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义面板属性 -->
+    <declare-styleable name="Panel">
+        <attr name="animationDuration" format="integer" />
+        <attr name="position">
+            <enum name="top" value="0"/>
+            <enum name="bottom" value="1"/>
+            <enum name="left" value="2"/>
+            <enum name="right" value="3"/>
+        </attr>
+        <attr name="handle" format="reference"/>
+        <attr name="content" format="reference"/>
+        <attr name="linearFlying" format="boolean"/>
+        <!-- %p形式代表一个百分比  -->
+        <attr name="weight" format="fraction"/>
+        <attr name="openedHandle" format="reference|color"/>
+        <attr name="closedHandle" format="reference|color"/>
+    </declare-styleable>
+</resources>

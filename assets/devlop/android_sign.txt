@@ -1,0 +1,30 @@
+Android程序apk编译、打包、签名 .
+ 一直想搞清楚Android apk是怎么编译打包并且签名发布Application的？？今天花了几个小时，并在网上查资料，终于把apk编译签名打包整个流程弄清楚了。
+PS：因为android程序一共有三种方式完成编译打包任务，参看连接：Android编译，打包、签名详细教程 我采用的是在Eclipse+ADT方式下，并在cmd中编写签名工作的，希望能帮助大家；
+1.Eclipse下打包unsigned apk
+在Eclipse，选中对应的Project，右击选择Android Tools——Export unsigned application package 
+2. Eclipse下打包signed apk
+在Eclipse，选中对应的Project，右击选择Android Tools——Export signed application package
+选择已有的签名文件keystore,注意要知道密码；如果没有keystore,在练习中可以自己试着编一个keystore，参看apk签名设置文本 X:\csdn博客文章\apk打包练习
+创建签名文件mySign.keystore步骤：PS：keystore是由jdk自带的工具keytool生成的。
+1.    进入cmd命令行，cd到jdk/bin目录下；
+2.    然后输入： 
+命令：keytool -genkey -alias asaiAndroid.keystore -keyalg RSA -validity 20000 -keystore asaiAndroid.keystore  生成的mySign.keystore就在jdk/bin目录中。
+解释：-alias 后面跟的是别名这里是 asaiAndroid.store 
+      -keyalg 是加密方式这里是RSA 
+      -validity 是有效期 这里是20000 
+      -keystore 就是要生成的keystore的名称 这里是asiAndroid.keystore 
+然后按回车键 ，按回车后首先会提示你输入的密码：这个在签名时要用的，要记住，然后会再确认你的密码。 之后会依次叫你输入姓名、组织单位、组织名称、城市区域、省份名称、国家代码
+设置完信息，最后再次输入原来的密码进行确认，再输入yes/no确定完成签名，并生成mySign.keystore签名文件；
+开始为unsigned.apk签名 步骤：PS：unsigned.apk mySigned.keystore必须在同个文件夹下，因为没有配置keytool的环境变量，所以暂时需要的文件均放在jdk/bin文件目录下；使用jarsigner
+命令：jarsigner -verbose -keystore mySign.keystore-signedjar AndroidTest_signed.apk AndroidTest.apk mySign.keystore生成的Lotteryonline_signed.apk就在jdk/bin目录中
+解释：-keystore: keystore的名称 
+      AndroidTest_signed.apk: 签名后的APK 
+      AndroidTest.apk: 签名前的APK 
+然后按回车：会要求输入刚才设置的密码，输入后按回车就开始签名了。
+PS:第一次签名失败的原因：AndroidTest.apk没有和mySign.keystore同在jdk/bin目录中；
+Apk包结构简介：转 http://www.eoeandroid.com/forum.php?mod=viewthread&tid=100000
+
+ 
+
+ 

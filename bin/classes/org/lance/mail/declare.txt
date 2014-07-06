@@ -1,0 +1,5 @@
+使用邮件包请注意---需要引入三个包mail.jar activation.jar additional.jar
+---在java项目中只需要系统库和mail.jar就可以运行
+---在android项目中系统库和android库会发生冲突
+---在使用接收邮件的类时可能会使用到如下软件包
+dsn.jar imap.jar mailapi.jar pop3.jar smtp.jar

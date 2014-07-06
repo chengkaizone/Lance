@@ -1,0 +1,1 @@
+C:\Windows\System32\runas.exe /user:Apple /savecred C:\WINDOWS\SYSTEM32\AppleControlPanel.exe

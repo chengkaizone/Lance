@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frag_text_title"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/og_schedule_item"
+    android:gravity="center_vertical"
+    android:paddingLeft="3dp"
+    android:textColor="@color/ck_black"
+    android:textSize="15sp" />

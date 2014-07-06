@@ -1,0 +1,23 @@
+目前CVS版本管理工具属于收费软件:
+服务器
+win7下下载CVS-suit-trial.msi 安装,完成安装后,在任意目录下右键会有CVS 相关选项,同SVN客户端使用相似
+开始->所有程序->CVS suit->CVS suit server->
+7个选项卡
+Server Setting服务器设置:
+Lock ->设置ip和端口
+Run as->设置访问用户:使用管理员账户;本人使用超级用户
+About-> 可以管理服务状态start-stop
+Repository configuration->
+资源库配置 添加资源库Add->Location设置本地目录;
+Name 设置资源库名;其他选项默认
+其他三个选项卡:
+Plugins插件
+Advanced
+User license configuration->访问账户配置
+只需默认即可
+CVS suit studio是图形化版本管理工具
+使用前需要开启服务可以在windows服务中开启;
+也可以在CVS suit server->About选项卡中开启;
+
+eclipse下默认安装了CVS客户端插件可以直接使用,同SVN使用方法大致相同
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+	<org.lance.widget.SignableListView
+	    android:id = "@+id/frag_list"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:listSelector="@drawable/listview_selector"
+		android:cacheColorHint="#00000000"
+		android:divider="@drawable/og_schedule_itemlist_divider" 
+        android:drawSelectorOnTop = "false"
+        android:scrollbars="none"
+        android:fadingEdge="none"
+	    />
+</LinearLayout>

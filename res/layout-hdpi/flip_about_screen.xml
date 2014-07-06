@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/flipboard_office" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/logo_white" />
+
+        <TextView
+            android:id="@+id/about_flipboard_version"
+            style="@style/textShadowBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/about_flipboard_copyright"
+            style="@style/textShadowBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:textColor="#aaffffff"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/about_build_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:textColor="#aaffffff"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/about_udid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:textColor="#aaffffff"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/about_shiyong"
+            style="@style/FLPaperButtonDark"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="0dp"
+            android:text="使用条款"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/about_yinshi"
+            style="@style/FLPaperButtonDark"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="0dp"
+            android:text="隐私权政策"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</FrameLayout>

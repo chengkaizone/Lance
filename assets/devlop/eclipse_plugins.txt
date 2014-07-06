@@ -1,0 +1,17 @@
+eclipse 常用插件更新路径
+svn:
+http://subclipse.tigris.org/update_1.8.x
+adt:
+http://dl-ssl.google.com/android/eclipse
+PropertiesEditor:
+http://propedit.sourceforge.jp/eclipse/updates/
+jadClipse 反编译插件的使用：网上搜索jar3.3
+eclipse4.2后使用net.sf.jadclipse_3.3.0.jar
+将jad.exe复制到java home bin目录下
+配置eclipse：
+class文件关联编辑器
+Window->Preferences->Editors->File Associations->*.class without class
+关联编辑器：add 选中JadClipse Class File Viewer ->default->ok便可查看class文件
+JadClipse关联路径
+Window->Preferences->Java->JadClilpse->Path to decompiler:
+这里设置jad.exe的文件路径；其他默认即可

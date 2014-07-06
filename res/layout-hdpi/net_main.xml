@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="@drawable/ck_base_bg" android:orientation="vertical">
+	<include
+	android:layout_width="fill_parent"
+	android:layout_height="40dip"
+	android:id="@+id/login_include"
+	layout="@layout/base_title"/>
+	<RelativeLayout android:paddingTop="14dp" android:id="@+id/net_relay"
+	     android:layout_below="@id/login_include"
+		android:paddingBottom="7dp" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginLeft="10dp"
+		android:layout_marginTop="7dp" android:layout_marginRight="10dp">
+		<EditText android:id="@+id/net_name" android:background="@drawable/ck_base_button"
+			android:paddingLeft="60.0sp" android:saveEnabled="true"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_marginLeft="5dp" android:layout_marginTop="5dp"
+			android:layout_marginRight="5dp" android:layout_marginBottom="3dp"
+			android:hint="请输入编码信息" android:layout_alignParentTop="true"
+			android:maxEms="5"
+			android:inputType="textEmailAddress" />
+		<TextView android:textSize="16dp" android:textColor="#ff000000"
+			android:gravity="center_vertical" android:id="@+id/TextView01"
+			android:paddingLeft="15.0sp" android:layout_width="70dp"
+			android:layout_height="wrap_content" android:layout_marginRight="15.0sp"
+			android:text="信息" android:layout_alignLeft="@id/net_name"
+			android:layout_alignTop="@id/net_name"
+			android:layout_alignBottom="@id/net_name" />
+		<Button android:textAppearance="@style/list_title_style"
+	android:id="@+id/net_button" android:background="@drawable/ck_base_button"
+	android:layout_width="match_parent" android:layout_height="wrap_content"
+	android:layout_marginLeft="15dp" android:layout_below="@id/net_name"
+	android:layout_marginRight="15dp" android:text="生成二维码"
+	android:layout_marginTop="15dp"
+	/>
+		
+	</RelativeLayout>
+	<include 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    layout="@layout/encode_image"
+	    />
+</RelativeLayout>

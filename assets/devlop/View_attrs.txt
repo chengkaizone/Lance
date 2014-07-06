@@ -1,0 +1,138 @@
+View
+直接子类：
+AnalogClock, ImageView, KeyboardView, ProgressBar, SurfaceView, TextView, ViewGroup, ViewStub  
+ 
+间接子类：
+AbsListView, AbsSeekBar, AbsSpinner, AbsoluteLayout, AdapterView<T extends Adapter>, AppWidgetHostView, AutoCompleteTextView, Button, CheckBox, CheckedTextView, Chronometer, CompoundButton, DatePicker, DialerFilter, DigitalClock, EditText, ExpandableListView, ExtractEditText, FrameLayout, GLSurfaceView, Gallery, GestureOverlayView, GridView, HorizontalScrollView, ImageButton, ImageSwitcher, LinearLayout, ListView, MediaController, MultiAutoCompleteTextView, QuickContactBadge, RadioButton, RadioGroup, RatingBar, RelativeLayout, ScrollView, SeekBar, SlidingDrawer, Spinner, TabHost, TabWidget, TableLayout, TableRow, TextSwitcher, TimePicker, ToggleButton, TwoLineListItem, VideoView, ViewAnimator, ViewFlipper, ViewSwitcher, WebView, ZoomButton, ZoomControls
+ 窗体显示状态操作（requestWindowFeature()的应用）
+
+XML属性
+属性名称描述
+android:background设置背景色/背景图片。可以通过以下两种方法设置背景为
+透明："@android:color/transparent"和"@null"。注意
+TextView默认是透明的，不用写此属性，但是
+Buttom/ImageButton/ImageView想透明的话就得写这个属
+性了。
+android:clickable是否响应点击事件。 
+android:contentDescription设置View的备注说明，作为一种辅助功能提供，为一些没
+有文字描述的View提供说明，如ImageButton。这里在界
+面上不会有效果，自己在程序中控制，可临时放一点字符
+串数据。
+android:drawingCacheQuality设置绘图时半透明质量。有以下值可设置：auto（默认，
+由框架决定）/high（高质量，使用较高的颜色深度，消耗
+更多的内存）/low（低质量，使用较低的颜色深度，但是
+用更少的内存）。
+
+android:duplicateParentState如果设置此属性，将直接从父容器中获取绘图状态（光标，
+按下等）。 见下面代码部分，注意根据目前测试情况仅仅是
+获取绘图状态，而没有获取事件，也就是你点一下
+LinearLayout时Button有被点击的效果，但是不执行点击事
+件。
+android:fadingEdge设置拉滚动条时 ，边框渐变的放向。none（边框颜色不
+变），horizontal（水平方向颜色变淡），vertical
+（垂直方向颜色变淡）。参照fadingEdgeLength的
+效果图
+android:fadingEdgeLength设置 边框渐变的长度。
+
+android:fitsSystemWindows设置布局调整时是否考虑系统窗口（如状态栏）
+android:focusable设置是否获得焦点。若有requestFocus()被调用时，后者
+优先处理。注意在表单中想设置某一个如EditText获取焦
+点，光设置这个是不行的，需要将这个EditText前面的
+focusable都设置为false才行。在Touch模式下获取焦点
+需要设置focusableInTouchMode为true。
+android:focusableInTouchMode设置在Touch模式下View是否能取得焦点。
+android:hapticFeedbackEnabled设置触感反馈。（译者注：按软键以及进行某些UI交互时振动，暂时不知道用法，大家可以找找performHapticFeedback或HapticFeedback这个关键字的资料看看。）
+android:id给当前View设置一个在当前layout.xml中的唯一编号，可
+以通过调用View.findViewById() 或Activity.findViewById()
+根据这个编号查找到对应的View。不同的layout.xml之间
+定义相同的id不会冲突。格式如”@+id/btnName”
+android:isScrollContainer设置当前View为滚动容器。这里没有测试出效果来，
+ListView/ GridView/ ScrollView根本就不用设置这个属性，
+而EdidText设置android:scrollbars也能出滚动条。
+android:keepScreenOnView在可见的情况下是否保持唤醒状态。
+
+常在LinearLayout使用该属性，但是模拟器这里没有效果。
+android:longClickable设置是否响应长按事件.
+android:minHeight设置视图最小高度
+android:minWidth设置视图最小宽度度
+android:nextFocusDown设置下方指定视图获得下一个焦点。焦点移动是基于一个
+在给定方向查找最近邻居的算法。如果指定视图不存在，
+移动焦点时将报运行时错误。可以设置
+imeOptions= actionDone，这样输入完即跳到下一个焦点。
+android:nextFocusLeft设置左边指定视图获得下一个焦点。
+android:nextFocusRight设置右边指定视图获得下一个焦点。
+android:nextFocusUp设置上方指定视图获得下一个焦点。
+android:onClick点击时从上下文中调用指定的方法。这里指定一个方法名
+称，一般在Activity定义符合如下参数和返回值的函数并将
+方法名字符串指定为该值即可：
+public void onClickButton(View view)
+android:onClick=” onClickButton”
+android:padding设置上下左右的边距，以像素为单位填充空白。
+
+android:paddingBottom设置底部的边距，以像素为单位填充空白。
+
+android:paddingLeft设置左边的边距，以像素为单位填充空白。
+
+android:paddingRight设置右边的边距，以像素为单位填充空白。.
+
+android:paddingTop设置上方的边距，以像素为单位填充空白。
+
+android:saveEnabled设置是否在窗口冻结时（如旋转屏幕）保存View的数据，
+默认为true，但是前提是你需要设置id才能自动保存，参
+见这里。
+android:scrollX以像素为单位设置水平方向滚动的的偏移值，在GridView
+中可看的这个效果。
+android:scrollY以像素为单位设置垂直方向滚动的的偏移值
+android:scrollbarAlwaysDrawHorizontalTrack设置是否始终显示垂直滚动条。这里用ScrollView、ListView
+测试均没有效果。
+android:scrollbarAlwaysDrawVerticalTrack设置是否始终显示垂直滚动条。这里用ScrollView、ListView
+测试均没有效果。
+android:scrollbarDefaultDelayBeforeFade设置N毫秒后开始淡化，以毫秒为单位。
+android:scrollbarFadeDuration设置滚动条淡出效果（从有到慢慢的变淡直至消失）时间，
+以毫秒为单位。Android2.2中滚动条滚动完之后会消失，再
+滚动又会出来，在1.5、1.6版本里面会一直显示着。
+android:scrollbarSize设置滚动条的宽度。
+android:scrollbarStyle设置滚动条的风格和位置。设置值：insideOverlay、
+insideInset、outsideOverlay、outsideInset。这里没有试出太
+多效果，以下依次是outsideOverlay与outsideInset效果截
+图比较：
+
+android:scrollbarThumbHorizontal设置水平滚动条的drawable（如颜色）。
+
+android:scrollbarThumbVertical设置垂直滚动条的drawable（如颜色）.
+
+android:scrollbarTrackHorizontal设置水平滚动条背景（轨迹）的色drawable（如颜色）
+
+android:scrollbarTrackVertical设置垂直滚动条背景（轨迹）的drawable注意直接
+设置颜色值如”android:color/white”将得出很
+难看的效果，甚至都不理解这个属性了，这里可以
+参见ApiDemos里res/drawable/ 
+scrollbar_vertical_thumb.xml和
+scrollbar_vertical_track.xml，设置代码为：
+android:scrollbarTrackVertical 
+="@drawable/scrollbar_vertical_track"
+
+android:scrollbars设置滚动条显示。none（隐藏），horizontal（水平），vertical
+（垂直）。见下列代码演示使用该属性让EditText内有滚动
+条。但是其他容器如LinearLayout设置了但是没有效果。
+
+android:soundEffectsEnabled设置点击或触摸时是否有声音效果
+android:tag设置一个文本标签。可以通过View.getTag()或 for with 
+View.findViewWithTag()检索含有该标签字符串的View。但
+一般最好通过ID来查询View，因为它的速度更快，并且允
+许编译时类型检查。
+android:visibility设置是否显示View。设置值：visible（默认值，显示），
+invisible（不显示，但是仍然占用空间），gone
+（不显示，不占用空间）
+         android:duplicateParentState
+             <LinearLayout android:clickable="true" android:background="#ff0fff" android:layout_width="100dp" android:layout_height="100dp">
+    <Button android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    android:scrollbars
+    <EditText android:layout_width="fill_parent"
+       android:layout_height="wrap_content" android:minHeight="50dp"
+       android:background="@android:drawable/editbox_background"
+       android:scrollbars="vertical"
+       android:maxLines="4">
+    </EditText>
+本文来源于：http://www.iteedu.com/, 原文地址：http://www.iteedu.com/handset/android/androidcnapi5/41.php

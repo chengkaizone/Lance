@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="ck_button_small">14sp</dimen>
+	<dimen name="ck_button_normal">18sp</dimen>
+	<dimen name="ck_button_big">22sp</dimen>
+	<dimen name="ck_text_small_less">14sp</dimen>
+	<dimen name="ck_text_small">16sp</dimen>
+	<dimen name="ck_text_normal">18sp</dimen>
+	<dimen name="ck_text_big">20sp</dimen>
+	<dimen name="ck_text_big_more">22sp</dimen>
+	<dimen name="ck_loading_small">20dp</dimen>
+	<dimen name="ck_loading_normal">40dp</dimen>
+	<dimen name="ck_loading_big">60dp</dimen>
+</resources>

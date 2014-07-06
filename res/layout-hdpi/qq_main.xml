@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>   
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:background="@color/ck_gray_white">
+        <org.lance.widget.GroupableListView
+            android:listSelector="@drawable/listview_selector"
+            android:groupIndicator="@null" 
+            android:choiceMode="singleChoice"
+            android:id="@+id/home_expandableListView" 
+            android:scrollbars="vertical"  
+            android:layout_width="0dp" 
+            android:layout_height="match_parent"  
+            android:layout_marginLeft="0dp" 
+            android:drawSelectorOnTop="false"
+            android:scrollingCache="true" 
+            android:layout_weight="1"  
+            android:fastScrollEnabled="false" 
+            android:footerDividersEnabled="true"  
+            android:cacheColorHint="#00000000"
+            style="@style/GroupableListView" />   
+</LinearLayout>  

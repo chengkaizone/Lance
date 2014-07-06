@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.lance.main"
+    android:versionCode="31"
+    android:versionName="3.1" >
+
+    <uses-sdk android:minSdkVersion="9" />
+
+    <application
+        android:icon="@drawable/video_camera"
+        android:theme="@style/CustomTheme"
+        android:label="demo" >
+        <activity
+            android:name=".RootClassDemo"
+            android:icon="@drawable/video_camera"
+            android:label="集合收藏"
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="org.lance.service.AidlService" >
+            <intent-filter>
+                <action android:name="org.lance.service.action.AIDL_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="org.lance.demo.DragDemo" 
+            />
+        <activity android:name="org.lance.demo.MiLaucherDemo" 
+            />
+		<activity android:name="org.lance.demo.TabNewsActivity" />
+        <activity android:name="org.lance.demo.CalendarDemo" />
+        <activity android:name="org.lance.demo.ViewPagerDemo" />
+        <activity android:name="org.lance.demo.QQMainDemo" />
+        <activity android:name="org.lance.demo.PullGridViewDemo" />
+        <activity android:name="org.lance.demo.ManyViewDemo" />
+        <activity
+            android:name="org.lance.demo.FragmentDemo"
+            android:configChanges="keyboardHidden|orientation" />
+        <!-- 设置输入法平移模式；不重新调整界面大小 -->
+        <activity android:name="org.lance.demo.SelectCityDemo"
+            android:windowSoftInputMode="stateUnchanged|adjustPan" />
+        <activity android:name="org.lance.demo.ListViewGroupDemo" />
+        <activity android:name="org.lance.demo.SimpleDragDemo" />
+        <activity android:name="org.lance.demo.CustomColumnDemo" />
+        <activity android:name="org.lance.demo.SectionDemo" />
+        <activity android:name="org.lance.demo.D3AnimationDemo" />
+        <activity android:name="org.lance.demo.VotePageDemo" />
+        <activity android:name="org.lance.demo.JBookPageDemo" />
+        <activity android:name="org.lance.demo.PullRefreshDemo" />
+        <activity android:name="org.lance.demo.MainClassDemo" />
+        <activity android:name="org.lance.demo.OtherClassDemo" />
+        <activity android:name="org.lance.demo.IndicatorDemo" />
+        <activity android:name="org.lance.demo.TurnPageDemo" />
+        <activity android:name="org.lance.demo.SignPageDemo" />
+        <activity android:name="org.lance.demo.GifViewDemo" />
+        <activity android:name="org.lance.demo.AlphaImageDemo" />
+        <activity android:name="org.lance.demo.ToastDemo" />
+        <activity android:name="org.lance.demo.TabDemo" />
+        <activity android:name="org.lance.demo.ProgressDemo" />
+        <activity android:name="org.lance.demo.ImageToSQLiteDemo" />
+        <activity
+            android:name="org.lance.demo.VoteSubmitDemo"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="org.lance.demo.CoverFlowDemo" />
+        <activity android:name="org.lance.demo.MatrixImageDemo" />
+        <activity android:name="org.lance.demo.ZoomImageDemo" />
+        <activity android:name="org.lance.demo.AnimationsDemo" />
+        <activity android:name="org.lance.demo.RoundCornerDemo" />
+        <activity android:name="org.lance.demo.WeixinChatDemo" />
+        <activity android:name="org.lance.demo.PathButtonDemo" />
+        <activity android:name="org.lance.demo.FireworksDemo" />
+        <!-- flipboard效果 -->
+        <activity android:name="org.lance.demo.FlipEffectDemo" />
+        <activity android:name="org.lance.demo.PanelDemo" />
+        <activity android:name="org.lance.demo.FlipLoginPage" />
+        <activity android:name="org.lance.demo.InterpolatorsDemo" />
+        <activity android:name="org.lance.demo.SwitcherDemo" />
+        <activity android:name="org.lance.demo.CropDemo" />
+        <activity android:name="org.lance.demo.ViewFlowDemo" />
+        <activity android:name="org.lance.demo.NeteaseListDemo" />
+        <activity android:name="org.lance.demo.OpenDoorDemo" />
+        <!-- 二维码 -->
+        <activity android:name="org.lance.demo.BarcodeDemoRoot" />
+        <activity
+            android:name="org.lance.demo.BarcodeDemo"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <!-- 过滤动作 -->
+                <action android:name="barcode.client.android.SCAN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.lance.demo.CreateBarcodeDemo" />
+        <activity android:name="org.lance.demo.WebPageDemo" />
+        <!-- opengl3D场景技术 -->
+        <activity android:name="opengl.lance.main.OpenglMainClass" />
+        <activity android:name="opengl.lance.demo_4.HexDemo" />
+        <activity android:name="opengl.lance.demo_4.OtherDemo" />
+        <activity android:name="opengl.lance.demo_4.PairDemo" />
+        <activity android:name="opengl.lance.demo_5.OtherDemo_1" />
+        <activity android:name="opengl.lance.demo_5.OtherDemo_2" />
+        <activity android:name="opengl.lance.demo_5.MyActivity_3" />
+        <activity android:name="opengl.lance.demo_5.MyActivity_4" />
+        <activity android:name="opengl.lance.demo_5.MyActivity_5" />
+        <activity android:name="opengl.lance.demo_5.MyActivity_6" />
+        <activity android:name="opengl.lance.demo_6.Sample6_1" />
+        <activity android:name="opengl.lance.demo_6.Sample6_2" />
+        <activity android:name="opengl.lance.demo_6.Sample6_3" />
+        <activity android:name="opengl.lance.demo_6.Sample6_4" />
+        <activity android:name="opengl.lance.demo_6.Sample6_5" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Cirque_1" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Cirque_2" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Cylinder_1" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Cylinder_2" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_HelicoidSurface_1" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_HelicoidSurface_2" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Hyperboloid_1" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Hyperboloid_2" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Paraboloid_1" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Paraboloid_2" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Taper_1" />
+        <activity android:name="opengl.lance.demo_7.Activity_GL_Taper_2" />
+        <activity android:name="opengl.lance.demo_8.Sample8_1" />
+        <activity android:name="opengl.lance.demo_8.Sample8_2" />
+        <activity android:name="opengl.lance.demo_8.Sample8_3" />
+        <activity android:name="opengl.lance.demo_8.Sample8_4" />
+        <activity android:name="opengl.lance.demo_9.GL_Demo" />
+        <activity android:name="opengl.lance.demo_10.Sample10_1" />
+        <activity android:name="opengl.lance.demo_10.Sample10_2" />
+        <activity android:name="opengl.lance.demo_11.Sample11_1" />
+        <activity android:name="opengl.lance.demo_11.Sample11_2" />
+        <activity android:name="opengl.lance.demo_11.Sample11_3" />
+        <activity android:name="opengl.lance.demo_11.Sample11_4" />
+        <activity android:name="opengl.lance.demo_13.Sample13_1" />
+        <activity android:name="opengl.lance.demo_13.Sample13_2" />
+        <activity android:name="opengl.lance.demo_13.Sample13_3" />
+        <activity android:name="opengl.lance.demo_13.Sample13_4" />
+        <activity android:name="opengl.lance.demo_13.Sample13_5" />
+        <activity android:name="opengl.lance.demo_14.Sample14_1" />
+        <activity android:name="opengl.lance.demo_15.Sample15_2" />
+        <activity android:name="opengl.lance.demo_15.Sample15_3" />
+        <activity android:name="opengl.lance.demo_15.Sample15_4" />
+        <activity android:name="opengl.lance.demo_15.Sample15_5" />
+        <activity android:name="opengl.lance.demo_15.Sample15_6" />
+        <activity android:name="opengl.lance.demo_15.Sample15_7" />
+        <activity android:name="opengl.lance.demo_15.Sample15_8" />
+        <!-- 糖果连连看 -->
+        <activity android:name="asqare.lance.main.AsqareActivity" />
+    </application>
+    <!-- 此处设置false对布局有一定影响 -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+</manifest>

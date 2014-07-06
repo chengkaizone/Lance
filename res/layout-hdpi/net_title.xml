@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/netease_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="6dp"
+        android:background="@drawable/ck_blue_top"
+        android:visibility="gone"
+        android:text="篮球"
+        />

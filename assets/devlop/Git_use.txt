@@ -1,0 +1,19 @@
+需要下载三个文件
+Copssh_***.exe,
+msysgit-***.exe->(windows下)http://code.google.com/p/msysgit/,
+TortoiseGit-***.msi(图形化工具,需要结合Git.exe使用)
+
+服务器安装Copssh.exe
+
+安装客户端:
+客户端需要配合git.exe TortoiseGit.msi配合安装
+安装后在任意目录下右键->
+TortoiseGit->Setting->
+General->右边栏Git.exe设置Git.exe文件路径(默认已经配置好路径)
+Network->右边栏SSH client设置ssh.exe同git安装的bin目录下ssh.exe()路径中添加ssh.exe
+Git
+User Info->设置用户信息
+用户名,用户邮箱,singing key(本地使用,系统会默认添加,无需手动输入);
+
+启动服务
+ok!

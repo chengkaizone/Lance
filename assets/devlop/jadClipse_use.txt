@@ -1,0 +1,6 @@
+jadClipse反编译工具的使用:
+1:下载jad.exe 可以直接使用 jad *.class命令生成*.jad文件,修改后缀名为*.java恢复成java文件,同源代码一样
+2:eclipse下自动编译
+Pindow->Preferences->General
+->File Associations->Editors->*.class *.class without source 选中后设置jadclipse编辑器为默认编辑器
+3:Window->Preferences->Java->JadClipse设置jad.exe文件路径,其他默认;重启eclipse

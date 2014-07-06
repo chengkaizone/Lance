@@ -1,0 +1,18 @@
+1、将无线设备添加到网络(先装无线网卡驱动)
+2、启用并设定虚拟WiFi网卡：
+运行命令：netsh wlan set hostednetwork mode=allow ssid=wuminPC key=wuminWiFi
+此命令有三个参数，mode：是否启用虚拟WiFi网卡，改为disallow则为禁用。
+                  ssid：无线网名称，最好用英文(以wuminPC为例)。
+                  key：无线网密码，八个以上字符(以wuminWiFi为例)。
+以上三个参数可以单独使用，例如只使用mode=disallow可以直接禁用虚拟Wifi网卡。
+3、设置Internet连接共享：
+在“网络连接”窗口中，右键单击已连接到Internet的网络连接，选择“属性”→“共享”，
+勾上“允许其他······连接(N)”并选择“虚拟WiFi”。
+4、开启无线网络：
+继续在命令提示符中运行：netsh wlan start hostednetwork
+至此，虚拟WiFi的红叉叉消失，WiFi基站已组建好，主机设置完毕。笔记本、带WiFi模块的
+手机等子机搜索到无线网络wuminPC，输入密码wuminWiFi，就能共享上网啦！
+（将start改为stop即可关闭该无线网，以后开机后要启用该无线网只需再次运行此命令即可）
+附：显示无线网络信息命令：netsh wlan show hostednetwork
+
+

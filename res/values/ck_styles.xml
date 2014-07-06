@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="list_title_style">
+        <item name="android:textSize">20sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff000000</item>
+        </style>
+	<style name="globle_list_title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ck_gray_white</item>
+    </style>
+	<style name="ck_loadingbar_gray_normal">
+		<item name="android:maxWidth">@dimen/ck_loading_normal</item>
+		<item name="android:minWidth">@dimen/ck_loading_normal</item>
+		<item name="android:maxHeight">@dimen/ck_loading_normal</item>
+		<item name="android:minHeight">@dimen/ck_loading_normal</item>
+		<item name="android:indeterminateDrawable">@anim/ck_loadingbar_gray</item>
+		<!-- 
+	    <item name="style">?android:attr/progressBarStyleHorizontal</item>
+	     -->
+	</style>
+	<style name="ck_loadingbar_white_normal">
+		<item name="android:maxWidth">@dimen/ck_loading_normal</item>
+		<item name="android:minWidth">@dimen/ck_loading_normal</item>
+		<item name="android:maxHeight">@dimen/ck_loading_normal</item>
+		<item name="android:minHeight">@dimen/ck_loading_normal</item>
+		<item name="android:indeterminateDrawable">@anim/ck_loadingbar_white</item>
+	</style>
+	<style name="ck_loadingbar_gray_big">
+		<item name="android:maxWidth">@dimen/ck_loading_big</item>
+		<item name="android:minWidth">@dimen/ck_loading_big</item>
+		<item name="android:maxHeight">@dimen/ck_loading_big</item>
+		<item name="android:minHeight">@dimen/ck_loading_big</item>
+		<item name="android:indeterminateDrawable">@anim/ck_loadingbar_gray</item>
+	</style>
+	<style name="ck_loadingbar_white_big">
+		<item name="android:maxWidth">@dimen/ck_loading_big</item>
+		<item name="android:minWidth">@dimen/ck_loading_big</item>
+		<item name="android:maxHeight">@dimen/ck_loading_big</item>
+		<item name="android:minHeight">@dimen/ck_loading_big</item>
+		<item name="android:indeterminateDrawable">@anim/ck_loadingbar_white</item>
+	</style>
+	<style name="ck_text_medium">
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_white</item>
+		<item name="android:layout_alignWithParentIfMissing">true</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+	</style>
+	<style name="ck_text_small">
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_white</item>
+		<item name="android:layout_alignWithParentIfMissing">true</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+	</style>
+	<style name="ck_text_large">
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_white</item>
+		<item name="android:layout_alignWithParentIfMissing">true</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+	</style>
+	<style name="ck_text_white_title">
+		<item name="android:textSize">@dimen/ck_text_normal</item>
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_white</item>
+	</style>
+	<style name="ck_text_black_title">
+		<item name="android:textSize">@dimen/ck_text_normal</item>
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_black</item>
+	</style>
+	<style name="ck_text_light_normal">
+		<item name="android:textSize">@dimen/ck_text_normal</item>
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_light_black</item>
+	</style>
+	<style name="ck_text_light_small">
+		<item name="android:textSize">@dimen/ck_text_small</item>
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_light_black</item>
+	</style>
+	<style name="ck_text_black_normal">
+		<item name="android:textSize">@dimen/ck_text_normal</item>
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_black</item>
+	</style>
+	<style name="ck_text_black_small">
+		<item name="android:textSize">@dimen/ck_text_small</item>
+		<item name="android:typeface">sans</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textColor">@color/ck_black</item>
+	</style>
+	<style name="ck_menu_anim" parent="@android:style/Animation">
+		<item name="android:windowEnterAnimation">@anim/ck_menu_visible</item>
+		<item name="android:windowExitAnimation">@anim/ck_menu_gone</item>
+	</style>
+	<!-- 自定义风格 无主题的子属性 在注册文件中使用  定义进入和退出的动画-->
+	<style name="NullCustomTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/NullCustomTheme</item>
+        <item name="android:activityOpenEnterAnimation">@anim/lightbox_fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/lightbox_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/stack_pop_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
+    </style>
+    <!-- 自定义风格 无主题的子属性 在注册文件中使用  定义进入和退出的动画-->
+	<style name="CustomTheme" parent="@android:style/Theme.NoTitleBar">
+	    <item name="android:windowAnimationStyle">@style/CustomTheme</item>
+        <item name="android:activityOpenEnterAnimation">@anim/lightbox_fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/lightbox_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/stack_pop_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
+    </style>
+</resources>

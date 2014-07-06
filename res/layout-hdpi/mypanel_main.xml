@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:panel="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/com.android.demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/first_run_cinemagraph" >
+
+        <ImageView
+            android:id="@+id/coverLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/f_logo_white" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/tile_border_default"
+            android:text="欢迎大家来到这里"
+            android:textSize="40sp" />
+    </RelativeLayout>
+
+    <org.lance.widget.Panel
+        android:id="@+id/topPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        panel:animationDuration="222"
+        panel:closedHandle="@drawable/ribbon"
+        panel:content="@+id/content"
+        panel:handle="@+id/handle"
+        panel:linearFlying="true"
+        panel:openedHandle="@drawable/ribbon_close"
+        panel:position="top" >
+
+        <ImageView
+            android:id="@id/handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="6dp" />
+
+        <RelativeLayout
+            android:id="@id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="48dp"
+                android:background="#fff7f7f7" >
+			<include 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    layout="@layout/flip_login"
+			    />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="32.0dip"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/gradient_white" />
+
+                <ImageView
+                    android:id="@+id/ribbon_in_pen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="6dp"
+                    android:src="@drawable/ribbon_top" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/bottom_shadow"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/gradient_black" />
+
+            <ImageView
+                android:id="@+id/handle_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/ribbon_close" />
+        </RelativeLayout>
+    </org.lance.widget.Panel>
+
+</FrameLayout>

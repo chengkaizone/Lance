@@ -1,0 +1,25 @@
+1. 启动终端Terminal
+2. 进入当前用户的home目录
+    输入cd ~
+3. 创建.bash_profile
+    输入touch .bash_profile
+4. 编辑.bash_profile文件
+    输入open -e .bash_profile
+    因为是为了搭建Android开发环境，输入Android SDK下的tools目录：export PATH=${PATH}:/eclipse/android_sdk/tools
+5. 保存文件，关闭.bash_profile
+6. 更新刚配置的环境变量
+    输入source .bash_profile
+7. 验证配置是否成功
+    输入android启动Android SDK and AVD Manager
+    
+终端中执行
+让Finder顶部显示完整路径
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+恢复默认YES改为NO
+
+修改显示隐藏文件夹设置
+defaults write com.apple.finder AppleShowAllFiles -bool YES
+恢复默认YES改为NO
+
+快速查看mac系统ip地址 终端ifconfig---与windows的ipconfig不同;
+也可以打开设置-->网络-->就能看见
